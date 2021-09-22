@@ -1,0 +1,42 @@
+{
+  "name": "ajax-project",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A dynamic HTML, CSS, and JavaScript solo project.",
+  "main": "index.js",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.css": [
+      "stylelint --fix"
+    ],
+    "*.html": [
+      "htmlhint"
+    ],
+    "*.js": [
+      "eslint --fix"
+    ]
+  },
+  "keywords": [],
+  "devDependencies": {
+    "eslint": "^7.28.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-html": "^6.1.2",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "htmlhint": "^0.15.1",
+    "husky": "^4.3.8",
+    "lint-staged": "^10.5.4",
+    "stylelint": "^13.13.1",
+    "stylelint-config-recommended": "^5.0.0",
+    "stylelint-config-standard": "^22.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "ISC"
+}
