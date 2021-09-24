@@ -7,6 +7,10 @@
   justify-content: center;
 }
 
+.justify-between {
+  justify-content: space-between;
+}
+
 .align-center {
   align-items: center;
   height: 100vh;
@@ -21,6 +25,10 @@
 .col-one-third,
 .col-one-fourth {
   width: 100%;
+}
+
+.col-one-fourth-2 {
+  width: 50%;
 }
 
 .padding-page {
@@ -46,7 +54,8 @@
     width: calc(100% / 3);
   }
 
-  .col-one-fourth {
+  .col-one-fourth,
+  .col-one-fourth-2 {
     width: 25%;
   }
 }

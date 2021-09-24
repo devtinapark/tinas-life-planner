@@ -1,9 +1,8 @@
 * {
   box-sizing: border-box;
-}
-
-body {
   margin: 0;
+  padding: 0;
+  cursor: default;
 }
 
 h1,
@@ -12,5 +11,4 @@ h3,
 h4,
 h5 {
   margin: auto;
-  padding: 0;
 }

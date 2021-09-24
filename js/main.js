@@ -7,6 +7,10 @@ var $headerMobile = document.querySelector('#header-mobile');
 var $headerDesktop = document.querySelector('#header-desktop');
 var $selectList = document.querySelectorAll('select');
 var $imgWheel = document.querySelector('#imgWheel');
+var $addVB = document.querySelector('#addVB');
+var $cancel = document.querySelector('#cancel');
+var $popUpContainer = document.querySelector('.popUpContainer');
+
 var dataWheel = {
   career: 10,
   finance: 10,
@@ -22,6 +26,8 @@ var dataWheel = {
 
 window.addEventListener('beforeunload', doDataWheelJSON);
 window.addEventListener('resize', swapHeaders);
+$addVB.addEventListener('click', openPopUp);
+$cancel.addEventListener('click', closePopUp);
 
 function doDataWheelJSON(event) {
   var dataWheelJSON = JSON.stringify(dataWheel);
@@ -71,4 +77,12 @@ function swapHeaders(event) {
     $headerMobile.className = '';
     $headerDesktop.className = 'hidden';
   }
+}
+
+function openPopUp(event) {
+  $popUpContainer.className = 'popUpContainer row justify-center align-center';
+}
+
+function closePopUp(event) {
+  $popUpContainer.className = 'popUpContainer row justify-center align-center hidden';
 }
