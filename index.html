@@ -5,19 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AJAX Project</title>
   <link rel="icon" href="images/favicon.ico">
+  <link rel="stylesheet" href="css/beanstalk.css">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@200;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100;200;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header class="text-center">
-    <div class="header-mobile">
+    <div id="header-mobile" class="">
       <div class="row justify-center align-center h64">
         <div class="col-full">
-          <h1 class="c-darkgray">Tina's Life Planner</h1>
+          <button><h1 class="c-darkgray">Tina's Life Planner</h1></button>
         </div>
       </div>
       <div class="row justify-center align-center h64 bc-lightgray">
@@ -30,23 +31,31 @@
               <a href="">Quote of the Day</a>
             </div>
           </div>
-          <h2 class="c-white-shadow">Wheel of Life</h2>
+          <button><h2 class="c-white-shadow">Wheel of Life</h2></button>
         </div>
       </div>
     </div>
-    <div class="hidden header-desktop">
+    <div id="header-desktop" class="hidden">
+      <div class="row justify-center align-center h64 bc-Xlightgray">
+        <div class="col-full relative">
+          <button id="homeDesktop">Tina's Life Planner</button>
+          <button class="navDesktop activeDesktop">Wheel of Life</button>
+          <button class="navDesktop">Vision Board</button>
+          <button class="navDesktop">Quoe of the Day</button>
+        </div>
+      </div>
     </div>
   </header>
   <main class="text-center">
     <div data-view="wheel-of-life" class="padding-page">
       <div class="row justify-center">
-        <div class="col-one-third padding-t">
+        <div class="col-one-third padding-t1">
           <img id="imgWheel" alt="wheel-of-life" src="https://image-charts.com/chart?chco=FF9797%7CFFC997%7CF3E078%7CA0E845%7C7BE8F6%7C63BDFF%7CC3B9FF%7CCA90DE%7CFFCAF0%7CEA9BD4&chd=t%3A10%2C10%2C10%2C10%2C10%2C10%2C10%2C10%2C10%2C10&chl=Career%7CFinance%7CHealth%7CSocial%7CFamily%7CLove%7CRecreation%7CContribution%7CSpirituality%7CSelf-Image&chlps=font.size%2C1%7Cpadding.right%2C10&chs=300x300&cht=pa&chxt=x%2Cy
 ">
         </div>
-        <div class="col-one-third padding-t">
+        <div class="col-one-third padding-t2">
           <form id="formWheel1">
-            <div id="career-box" class="category-box c-1">
+            <div class="category-box c-1">
               <label for="career" class="category-label">Career</label>
               <select id="career" name="career">
                 <option value="">Select</option>
@@ -98,7 +107,7 @@
                 <option value="9">9</option>
                 <option value="10">10</option>
               </select>
-              <h4>Financial habits, Incomes, Savings, Investments</h4>
+              <h4>Healthy lifestyle, Diet, Sleep, Exercise</h4>
             </div>
             <div class="category-box c-4">
               <label for="social" class="category-label">Social</label>
@@ -138,7 +147,7 @@
             </div>
           </form>
         </div>
-        <div class="col-one-third padding-t2">
+        <div class="col-one-third padding-t3">
           <form id="formWheel2">
             <div class="category-box c-6">
               <label for="love" class="category-label">Love</label>
@@ -235,6 +244,7 @@
       </div>
     </div>
   </main>
+  <script src="js/eaydropdown.js"></script>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
 </body>

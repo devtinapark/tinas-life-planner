@@ -1,3 +1,10 @@
+/* global easydropdown */
+
+easydropdown.all();
+
+var minWidth = window.matchMedia('(min-width: 768px)');
+var $headerMobile = document.querySelector('#header-mobile');
+var $headerDesktop = document.querySelector('#header-desktop');
 var $selectList = document.querySelectorAll('select');
 var $imgWheel = document.querySelector('#imgWheel');
 var dataWheel = {
@@ -14,6 +21,7 @@ var dataWheel = {
 };
 
 window.addEventListener('beforeunload', doDataWheelJSON);
+window.addEventListener('resize', swapHeaders);
 
 function doDataWheelJSON(event) {
   var dataWheelJSON = JSON.stringify(dataWheel);
@@ -52,4 +60,15 @@ function updateUrl() {
   dataWheel.selfImage +
   '&chl=Career%7CFinance%7CHealth%7CSocial%7CFamily%7CLove%7CRecreation%7CContribution%7CSpirituality%7CSelf-Image&chlps=font.size%2C10.5%7Cpadding.right%2C10&chs=300x300&cht=pa&chxt=x%2Cy';
   $imgWheel.setAttribute('src', newUrl);
+}
+swapHeaders();
+
+function swapHeaders(event) {
+  if (minWidth.matches) {
+    $headerMobile.className = 'hidden';
+    $headerDesktop.className = '';
+  } else {
+    $headerMobile.className = '';
+    $headerDesktop.className = 'hidden';
+  }
 }
