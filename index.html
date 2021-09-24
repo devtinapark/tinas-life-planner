@@ -5,15 +5,246 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AJAX Project</title>
   <link rel="icon" href="images/favicon.ico">
+  <link rel="stylesheet" href="css/beanstalk.css">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100;200;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
+  <header class="text-center">
+    <div id="header-mobile" class="">
+      <div class="row justify-center align-center h64">
+        <div class="col-full">
+          <button><h1 class="c-darkgray">Tina's Life Planner</h1></button>
+        </div>
+      </div>
+      <div class="row justify-center align-center h64 bc-lightgray">
+        <div class="col-full">
+          <div class="hidden dropdown">
+            <button>Menu</button>
+            <div class="dropdown-content">
+              <a href="">Wheel of Life</a>
+              <a href="">Vision Board</a>
+              <a href="">Quote of the Day</a>
+            </div>
+          </div>
+          <button><h2 class="c-white-shadow">Wheel of Life</h2></button>
+        </div>
+      </div>
+    </div>
+    <div id="header-desktop" class="hidden">
+      <div class="row justify-center align-center h64 bc-Xlightgray">
+        <div class="col-full relative">
+          <button id="homeDesktop">Tina's Life Planner</button>
+          <button class="navDesktop activeDesktop">Wheel of Life</button>
+          <button class="navDesktop">Vision Board</button>
+          <button class="navDesktop">Quoe of the Day</button>
+        </div>
+      </div>
+    </div>
   </header>
-  <main>
+  <main class="text-center">
+    <div data-view="wheel-of-life" class="padding-page">
+      <div class="row justify-center">
+        <div class="col-one-third padding-t1">
+          <img id="imgWheel" alt="wheel-of-life" src="https://image-charts.com/chart?chco=FF9797%7CFFC997%7CF3E078%7CA0E845%7C7BE8F6%7C63BDFF%7CC3B9FF%7CCA90DE%7CFFCAF0%7CEA9BD4&chd=t%3A10%2C10%2C10%2C10%2C10%2C10%2C10%2C10%2C10%2C10&chl=Career%7CFinance%7CHealth%7CSocial%7CFamily%7CLove%7CRecreation%7CContribution%7CSpirituality%7CSelf-Image&chlps=font.size%2C1%7Cpadding.right%2C10&chs=300x300&cht=pa&chxt=x%2Cy
+">
+        </div>
+        <div class="col-one-third padding-t2">
+          <form id="formWheel1">
+            <div class="category-box c-1">
+              <label for="career" class="category-label">Career</label>
+              <select id="career" name="career">
+                <option value="">Select</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+              <h4>Careers, Businesses, Studies</h4>
+            </div>
+            <div class="category-box c-2">
+              <label for="finance" class="category-label">Finance</label>
+              <select id="finance" name="finance">
+                <option value="">Select</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+              <h4>Financial habits, Incomes, Savings, Investments</h4>
+            </div>
+            <div class="category-box c-3">
+              <label for="health" class="category-label">Health</label>
+              <select id="health" name="health">
+                <option value="">Select</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+              <h4>Healthy lifestyle, Diet, Sleep, Exercise</h4>
+            </div>
+            <div class="category-box c-4">
+              <label for="social" class="category-label">Social</label>
+              <select id="social" name="social">
+                <option value="">Select</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+              <h4>Positive, like-minded friends to talk about everything</h4>
+            </div>
+            <div class="category-box c-5">
+              <label for="family" class="category-label">Family</label>
+              <select id="family" name="family">
+                <option value="">Select</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+              <h4>Relationship with family members</h4>
+            </div>
+          </form>
+        </div>
+        <div class="col-one-third padding-t3">
+          <form id="formWheel2">
+            <div class="category-box c-6">
+              <label for="love" class="category-label">Love</label>
+              <select id="love" name="love">
+                <option value="">Select</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+              <h4>Vibrancy and satisfaction of current love/single life</h4>
+            </div>
+            <div class="category-box c-7">
+              <label for="recreation" class="category-label">Recreation</label>
+              <select id="recreation" name="recreation">
+                <option value="">Select</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+              <h4>Hobbies &amp; Interests outside of work</h4>
+            </div>
+            <div class="category-box c-8">
+              <label for="contribution" class="category-label">Contribution</label>
+              <select id="contribution" name="contribution">
+                <option value="">Select</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+              <h4>Positive contribution to the world</h4>
+            </div>
+            <div class="category-box c-9">
+              <label for="spirituality" class="category-label">Spirituality</label>
+              <select id="spirituality" name="spirituality">
+                <option value="">Select</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+              <h4>Connection with the Universe and your higher self</h4>
+            </div>
+            <div class="category-box c-10">
+              <label for="selfImage" class="category-label">Self-Image</label>
+              <select id="selfImage" name="selfImage">
+                <option value="">Select</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+              <h4>Self- Talk, Image, Esteem, Confidence</h4>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </main>
+  <script src="js/eaydropdown.js"></script>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
 </body>

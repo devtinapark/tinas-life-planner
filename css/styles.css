@@ -1,0 +1,322 @@
+body,
+button {
+  font-family: 'Advent Pro', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 36px;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 36px;
+}
+
+h3 {
+  font-weight: 200;
+  font-size: 36px;
+}
+
+h4 {
+  font-weight: 400;
+  font-size: 12px;
+  color: black;
+  margin-top: 5px;
+}
+
+button {
+  border: none;
+  background: none;
+}
+
+button:hover {
+  cursor: pointer;
+  color: white;
+}
+
+.relative {
+  position: relative;
+}
+
+.category-label {
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.h64 {
+  height: 64px;
+}
+
+.c-lightgray {
+  color: #d9d9d9;
+}
+
+.c-darkgray {
+  color: #a9a9a9;
+}
+
+.c-white-shadow {
+  color: white;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25));
+}
+
+.bc-Xlightgray {
+  background-color: #e7e7e7;
+}
+
+.bc-lightgray {
+  background-color: #d9d9d9;
+}
+
+.bc-darkgray {
+  background-color: #a9a9a9;
+}
+
+.padding-t1 {
+  padding-top: 7%;
+  padding-bottom: 7%;
+}
+
+.padding-t2 {
+  padding-top: 0;
+}
+
+.padding-t3 {
+  padding-top: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .padding-t1 {
+    padding-top: 10%;
+  }
+
+  .padding-t2 {
+    padding-top: 2%;
+  }
+
+  .padding-t3 {
+    padding-top: 2%;
+  }
+}
+
+.category-box {
+  border: 1px solid;
+  border-radius: 5px;
+  width: 266px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+}
+
+.c-1 {
+  color: #ff9797;
+  border-color: #ff9797;
+}
+
+.c-2 {
+  color: #ffc997;
+  border-color: #ffc997;
+}
+
+.c-3 {
+  color: #f3e078;
+  border-color: #f3e078;
+}
+
+.c-4 {
+  color: #a0e845;
+  border-color: #a0e845;
+}
+
+.c-5 {
+  color: #7be8f6;
+  border-color: #7be8f6;
+}
+
+.c-6 {
+  color: #63bdff;
+  border-color: #63bdff;
+}
+
+.c-7 {
+  color: #c3b9ff;
+  border-color: #c3b9ff;
+}
+
+.c-8 {
+  color: #ca90de;
+  border-color: #ca90de;
+}
+
+.c-9 {
+  color: #ffcaf0;
+  border-color: #ffcaf0;
+}
+
+.c-10 {
+  color: #ea9bd4;
+  border-color: #ea9bd4;
+}
+
+.custom-select {
+  position: relative;
+  width: 200px;
+}
+
+.custom-select select {
+  display: none;
+}
+
+label {
+  display: block;
+}
+
+.c-1 .edd-head {
+  border-color: #ff9797 !important;
+}
+
+.c-1 .edd-arrow {
+  color: #ff9797 !important;
+}
+
+.c-1 .edd-option-focused:not(.edd-option-disabled) {
+  background: #ff9797 !important;
+}
+
+.c-2 .edd-head {
+  border-color: #ffc997 !important;
+}
+
+.c-2 .edd-arrow {
+  color: #ffc997 !important;
+}
+
+.c-2 .edd-option-focused:not(.edd-option-disabled) {
+  background: #ffc997 !important;
+}
+
+.c-3 .edd-head {
+  border-color: #f3e078 !important;
+}
+
+.c-3 .edd-arrow {
+  color: #f3e078 !important;
+}
+
+.c-3 .edd-option-focused:not(.edd-option-disabled) {
+  background: #f3e078 !important;
+}
+
+.c-4 .edd-head {
+  border-color: #a0e845 !important;
+}
+
+.c-4 .edd-arrow {
+  color: #a0e845 !important;
+}
+
+.c-4 .edd-option-focused:not(.edd-option-disabled) {
+  background: #a0e845 !important;
+}
+
+.c-5 .edd-head {
+  border-color: #7be8f6 !important;
+}
+
+.c-5 .edd-arrow {
+  color: #7be8f6 !important;
+}
+
+.c-5 .edd-option-focused:not(.edd-option-disabled) {
+  background: #7be8f6 !important;
+}
+
+.c-6 .edd-head {
+  border-color: #63bdff !important;
+}
+
+.c-6 .edd-arrow {
+  color: #63bdff !important;
+}
+
+.c-6 .edd-option-focused:not(.edd-option-disabled) {
+  background: #63bdff !important;
+}
+
+.c-7 .edd-head {
+  border-color: #c3b9ff !important;
+}
+
+.c-7 .edd-arrow {
+  color: #c3b9ff !important;
+}
+
+.c-7 .edd-option-focused:not(.edd-option-disabled) {
+  background: #c3b9ff !important;
+}
+
+.c-8 .edd-head {
+  border-color: #ca90de !important;
+}
+
+.c-8 .edd-arrow {
+  color: #ca90de !important;
+}
+
+.c-8 .edd-option-focused:not(.edd-option-disabled) {
+  background: #ca90de !important;
+}
+
+.c-9 .edd-head {
+  border-color: #ffcaf0 !important;
+}
+
+.c-9 .edd-arrow {
+  color: #ffcaf0 !important;
+}
+
+.c-9 .edd-option-focused:not(.edd-option-disabled) {
+  background: #ffcaf0 !important;
+}
+
+.c-10 .edd-head {
+  border-color: #ea9bd4 !important;
+}
+
+.c-10 .edd-arrow {
+  color: #ea9bd4 !important;
+}
+
+.c-10 .edd-option-focused:not(.edd-option-disabled) {
+  background: #ea9bd4 !important;
+}
+
+.navDesktop {
+  font-size: 32px;
+  font-weight: 200;
+  color: black;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.activeDesktop {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+#homeDesktop {
+  position: absolute;
+  left: 20px;
+  top: 0;
+  font-size: 36px;
+  font-weight: 700;
+  color: #7c7c7c;
+}
+
+#homeDesktop:hover {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25));
+}
