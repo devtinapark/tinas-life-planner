@@ -42,15 +42,15 @@
       <div class="row justify-center align-center h64 bc-Xlightgray">
         <div class="col-full relative">
           <button id="homeDesktop">Tina's Life Planner</button>
-          <button class="navDesktop activeDesktop">Wheel of Life</button>
-          <button class="navDesktop">Vision Board</button>
-          <button class="navDesktop">Quote of the Day</button>
+          <button id="navDW" class="navDesktop activeDesktop">Wheel of Life</button>
+          <button id="navDVB" class="navDesktop">Vision Board</button>
+          <button id="navDQ" class="navDesktop">Quote of the Day</button>
         </div>
       </div>
     </div>
   </header>
   <main class="text-center">
-    <div data-view="wheel-of-life" class=" hidden padding-page">
+    <div data-view="wheel-of-life" class="padding-page view">
       <div class="row justify-center">
         <div class="col-one-third padding-t1">
           <img id="imgWheel" alt="wheel-of-life" src="https://image-charts.com/chart?chco=FF9797%7CFFC997%7CF3E078%7CA0E845%7C7BE8F6%7C63BDFF%7CC3B9FF%7CCA90DE%7CFFCAF0%7CEA9BD4&chd=t%3A10%2C10%2C10%2C10%2C10%2C10%2C10%2C10%2C10%2C10&chl=Career%7CFinance%7CHealth%7CSocial%7CFamily%7CLove%7CRecreation%7CContribution%7CSpirituality%7CSelf-Image&chlps=font.size%2C1%7Cpadding.right%2C10&chs=300x300&cht=pa&chxt=x%2Cy
@@ -246,7 +246,7 @@
         </div>
       </div>
     </div>
-    <div data-view="vision-board" class="padding-page">
+    <div data-view="vision-board" class="padding-page view hidden">
       <div class="row justify-between">
         <div class="col-one-fourth-2 padding-t4">
           <div class="entryVBContainer">
@@ -282,7 +282,7 @@
         <div class="popUpContainer row justify-center align-center hidden">
           <div class="popUpBox">
             <img class="imgPopUp" src="images/placeholder.jpeg">
-            <form>
+            <form id="formEntryVB">
               <div>
                 <label for="photoUrl">Photo URL</label>
                 <input id="photoUrl" name="photoUrl" type="text">
@@ -298,6 +298,8 @@
           </div>
         </div>
       </div>
+    </div>
+    <div data-view="quote-of-the-day" class="padding-page view hidden">
     </div>
   </main>
   <script src="js/eaydropdown.js"></script>

@@ -10,6 +10,10 @@ var $imgWheel = document.querySelector('#imgWheel');
 var $addVB = document.querySelector('#addVB');
 var $cancel = document.querySelector('#cancel');
 var $popUpContainer = document.querySelector('.popUpContainer');
+var $listView = document.querySelectorAll('.view');
+var $navDW = document.querySelector('#navDW');
+var $navDVB = document.querySelector('#navDVB');
+var $navDQ = document.querySelector('#navDQ');
 
 var dataWheel = {
   career: 10,
@@ -28,6 +32,9 @@ window.addEventListener('beforeunload', doDataWheelJSON);
 window.addEventListener('resize', swapHeaders);
 $addVB.addEventListener('click', openPopUp);
 $cancel.addEventListener('click', closePopUp);
+$navDW.addEventListener('click', swapToW);
+$navDVB.addEventListener('click', swapToVB);
+$navDQ.addEventListener('click', swapToQ);
 
 function doDataWheelJSON(event) {
   var dataWheelJSON = JSON.stringify(dataWheel);
@@ -85,4 +92,26 @@ function openPopUp(event) {
 
 function closePopUp(event) {
   $popUpContainer.className = 'popUpContainer row justify-center align-center hidden';
+}
+
+function swapDV(viewActive) {
+  for (var i = 0; i < $listView.length; i++) {
+    if ($listView[i].getAttribute('data-view') === viewActive) {
+      $listView[i].className = 'view padding-page';
+    } else {
+      $listView[i].className = 'view padding-page hidden';
+    }
+  }
+}
+
+function swapToW(event) {
+  swapDV('wheel-of-life');
+}
+
+function swapToVB(event) {
+  swapDV('vision-board');
+}
+
+function swapToQ(event) {
+  swapDV('qute-of-the-day');
 }
