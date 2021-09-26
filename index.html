@@ -247,37 +247,7 @@
       </div>
     </div>
     <div data-view="vision-board" class="padding-page view hidden">
-      <div class="row justify-between">
-        <div class="col-one-fourth-2 padding-t4">
-          <div class="entryVBContainer">
-            <div class="edit"><i class="fa fa-pencil fa-lg"></i></div>
-            <div class="entryVBOverlay"></div>
-            <img class="imgVB" src="https://cdn.pixabay.com/photo/2014/12/16/22/25/woman-570883_960_720.jpg">
-            <h3>Self-Expression</h3>
-          </div>
-        </div>
-        <div class="col-one-fourth-2 padding-t4">
-          <div class="entryVBContainer">
-            <div class="edit"><i class="fa fa-pencil fa-lg"></i></div>
-            <img class="imgVB" src="https://images.livemint.com/rf/Image-621x414/LiveMint/Period1/2013/10/07/Photos/coins--621x414.jpg">
-          </div>
-        </div>
-        <div class="col-one-fourth-2 padding-t4">
-          <div class="entryVBContainer">
-            <img class="imgVB" src="https://cdn.pixabay.com/photo/2014/12/16/22/25/woman-570883_960_720.jpg">
-          </div>
-        </div>
-        <div class="col-one-fourth-2 padding-t4">
-          <div class="entryVBContainer">
-            <img class="imgVB" src="https://images.livemint.com/rf/Image-621x414/LiveMint/Period1/2013/10/07/Photos/coins--621x414.jpg">
-          </div>
-        </div>
-        <div class="col-one-fourth-2 padding-t4">
-          <div class="entryVBContainer">
-            <img class="imgVB"
-              src="https://images.livemint.com/rf/Image-621x414/LiveMint/Period1/2013/10/07/Photos/coins--621x414.jpg">
-          </div>
-        </div>
+      <div id="rowVB" class="row justify-between">
         <button id="addVB"><i id="iAddVB" class="fa fa-plus fa-2x"></i></button>
         <div class="popUpContainer row justify-center align-center hidden">
           <div class="popUpBox">
@@ -291,10 +261,12 @@
                 <label for="lifeGoal">Life Goal</label>
                 <input id="lifeGoal" name="lifeGoal" type="text">
               </div>
+              <div id="popButtonContainer" class="relative">
+                <button id="cancel" class="popButton absolute">CANCEL</button>
+                <button id="delete" class="popButton absolute">DELETE</button>
+                <input id="confirm" class="popButton absolute" type="submit" value="CONFIRM">
+              </div>
             </form>
-            <button id="cancel">CANCEL</button>
-            <button id="delete">DELETE</button>
-            <button id="confirm">CONFIRM</button>
           </div>
         </div>
       </div>

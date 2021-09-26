@@ -10,10 +10,6 @@ i {
   -webkit-text-fill-color: transparent;
 }
 
-i:hover {
-  cursor: pointer;
-}
-
 h1 {
   font-weight: 700;
   font-size: 36px;
@@ -77,14 +73,18 @@ button:hover {
   cursor: text;
 }
 
-.popUpBox button {
+#popButtonContainer .popButton {
   font-weight: 400;
   color: white;
   height: 36px;
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 4px;
-  margin-top: 20px;
+  width: 90px;
+}
+
+.absolute {
+  position: absolute;
 }
 
 .relative {
@@ -439,6 +439,28 @@ button:hover {
   -webkit-text-fill-color: white;
 }
 
+#cancel {
+  background-color: #909090;
+  top: 22px;
+  left: 0;
+}
+
+#delete {
+  background-color: #d22323;
+  top: 22px;
+  left: 35%;
+}
+
+#confirm {
+  background-color: #007bff;
+  top: 22px;
+  right: 0;
+}
+
+#confirm:hover {
+  cursor: pointer;
+}
+
 @media screen and (min-width: 768px) {
   h3 {
     font-size: 24px;
@@ -476,18 +498,4 @@ button:hover {
     width: 80px;
     height: 80px;
   }
-}
-
-#cancel {
-  background-color: #909090;
-}
-
-#delete {
-  background-color: #d22323;
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
-#confirm {
-  background-color: #007bff;
 }
