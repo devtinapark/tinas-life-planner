@@ -11,6 +11,7 @@ var $addVB = document.querySelector('#addVB');
 var $cancel = document.querySelector('#cancel');
 var $popUpContainer = document.querySelector('.popUpContainer');
 var $listView = document.querySelectorAll('.view');
+var $listNavDesktop = document.querySelectorAll('.navDesktop');
 var $navDW = document.querySelector('#navDW');
 var $navDVB = document.querySelector('#navDVB');
 var $navDQ = document.querySelector('#navDQ');
@@ -39,7 +40,7 @@ var dataVB = {
 }
   ;
 
-window.addEventListener('beforeunload', doDataWheelJSON);
+window.addEventListener('beforeunload', doDataJSON);
 window.addEventListener('resize', swapHeaders);
 window.addEventListener('DOMContentLoaded', handleLoad);
 $addVB.addEventListener('click', openPopUp);
@@ -50,17 +51,22 @@ $navDQ.addEventListener('click', swapToQ);
 $photoUrl.addEventListener('input', updatePhotoUrl);
 $formEntryVB.addEventListener('submit', handleSubmit);
 
-function doDataWheelJSON(event) {
+function doDataJSON(event) {
   var dataWheelJSON = JSON.stringify(dataWheel);
   localStorage.setItem('dataWheel', dataWheelJSON);
+  var dataVBJSON = JSON.stringify(dataVB);
+  localStorage.setItem('dataVB', dataVBJSON);
 }
 
 var previousDataWheelJSON = localStorage.getItem('dataWheel');
+var previousDataVBJSON = localStorage.getItem('dataVB');
 
 if (previousDataWheelJSON !== null) {
   dataWheel = JSON.parse(previousDataWheelJSON);
 }
-
+if (previousDataVBJSON !== null) {
+  dataVB = JSON.parse(previousDataVBJSON);
+}
 updateWheelUrl();
 
 for (var $select of $selectList) {
@@ -122,14 +128,27 @@ function swapDV(viewActive) {
 
 function swapToW(event) {
   swapDV('wheel-of-life');
+  doActiveDesktop('navDW');
 }
 
 function swapToVB(event) {
   swapDV('vision-board');
+  doActiveDesktop('navDVB');
 }
 
 function swapToQ(event) {
   swapDV('qute-of-the-day');
+  doActiveDesktop('navDQ');
+}
+
+function doActiveDesktop(activeID) {
+  for (var $navDesktop of $listNavDesktop) {
+    if ($navDesktop.getAttribute('id') === activeID) {
+      $navDesktop.className = 'navDesktop activeDesktop';
+    } else {
+      $navDesktop.className = 'navDesktop';
+    }
+  }
 }
 
 function updatePhotoUrl(event) {
