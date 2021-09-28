@@ -9,6 +9,7 @@ var $selectList = document.querySelectorAll('select');
 var $imgWheel = document.querySelector('#imgWheel');
 var $addVB = document.querySelector('#addVB');
 var $cancel = document.querySelector('#cancel');
+var $delete = document.querySelector('#delete');
 var $popUpContainer = document.querySelector('.popUpContainer');
 var $listView = document.querySelectorAll('.view');
 var $listNavDesktop = document.querySelectorAll('.navDesktop');
@@ -108,6 +109,7 @@ function swapHeaders(event) {
 
 function openPopUp(event) {
   $popUpContainer.className = 'popUpContainer row justify-center align-center';
+  $delete.style.visibility = 'hidden';
 }
 
 function closePopUp(event) {
