@@ -7,6 +7,10 @@
   justify-content: center;
 }
 
+.justify-between {
+  justify-content: space-between;
+}
+
 .align-center {
   align-items: center;
   height: 100vh;
@@ -16,6 +20,14 @@
   text-align: center;
 }
 
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
 .col-full,
 .col-one-half,
 .col-one-third,
@@ -23,8 +35,19 @@
   width: 100%;
 }
 
+.col-one-fourth-2 {
+  width: 50%;
+}
+
 .padding-page {
   padding: 0;
+}
+
+.padding-quote {
+  padding-top: 20%;
+  padding-bottom: 20%;
+  padding-left: 15%;
+  padding-right: 15%;
 }
 
 .hidden {
@@ -46,7 +69,8 @@
     width: calc(100% / 3);
   }
 
-  .col-one-fourth {
+  .col-one-fourth,
+  .col-one-fourth-2 {
     width: 25%;
   }
 }

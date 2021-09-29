@@ -5,6 +5,11 @@ button {
   padding: 0;
 }
 
+i {
+  -webkit-text-stroke: 1px white;
+  -webkit-text-fill-color: transparent;
+}
+
 h1 {
   font-weight: 700;
   font-size: 36px;
@@ -16,8 +21,10 @@ h2 {
 }
 
 h3 {
-  font-weight: 200;
-  font-size: 36px;
+  font-weight: 600;
+  font-size: 18px;
+  color: black;
+  padding-top: 3%;
 }
 
 h4 {
@@ -25,6 +32,10 @@ h4 {
   font-size: 12px;
   color: black;
   margin-top: 5px;
+}
+
+label {
+  display: block;
 }
 
 button {
@@ -35,6 +46,46 @@ button {
 button:hover {
   cursor: pointer;
   color: white;
+}
+
+.popUpBox label,
+.popUpBox input,
+.popUpBox button {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+.popUpBox label {
+  font-weight: 700;
+  text-align: left;
+  color: #007bff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.popUpBox input {
+  font-weight: 400;
+  width: 100%;
+  height: 36px;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  padding-left: 10px;
+  cursor: text;
+}
+
+#popButtonContainer .popButton {
+  font-weight: 400;
+  color: white;
+  height: 36px;
+  margin-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 4px;
+  width: 90px;
+}
+
+.absolute {
+  position: absolute;
 }
 
 .relative {
@@ -88,18 +139,8 @@ button:hover {
   padding-top: 0;
 }
 
-@media screen and (min-width: 768px) {
-  .padding-t1 {
-    padding-top: 10%;
-  }
-
-  .padding-t2 {
-    padding-top: 2%;
-  }
-
-  .padding-t3 {
-    padding-top: 2%;
-  }
+.padding-t4 {
+  padding-top: 7%;
 }
 
 .category-box {
@@ -169,10 +210,6 @@ button:hover {
 
 .custom-select select {
   display: none;
-}
-
-label {
-  display: block;
 }
 
 .c-1 .edd-head {
@@ -308,6 +345,78 @@ label {
   text-decoration: underline;
 }
 
+.entryVBContainer {
+  width: 160px;
+  height: 140px;
+  border: 1px solid #afafaf;
+  border-radius: 8px;
+  background-color: white;
+  margin: auto;
+  position: relative;
+}
+
+.imgVB {
+  width: 100%;
+  height: 75%;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+
+.edit {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: white;
+  display: none;
+  z-index: 2;
+}
+
+.entryVBContainer:hover .edit {
+  display: block;
+}
+
+.entryVBOverlay {
+  position: absolute;
+  display: none;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.entryVBContainer:hover .entryVBOverlay {
+  display: block;
+}
+
+.popUpContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 3;
+}
+
+.popUpBox {
+  width: 336px;
+  height: 452px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.imgPopUp {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.notVisible {
+  visibility: hidden;
+}
+
 #homeDesktop {
   position: absolute;
   left: 20px;
@@ -319,4 +428,98 @@ label {
 
 #homeDesktop:hover {
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25));
+}
+
+#addVB {
+  position: fixed;
+  right: 8%;
+  bottom: 5%;
+  background-color: #007bff;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+#iAddVB {
+  -webkit-text-stroke: none;
+  -webkit-text-fill-color: white;
+}
+
+#cancel {
+  background-color: #909090;
+}
+
+#delete {
+  background-color: #d22323;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+#confirm {
+  background-color: #007bff;
+}
+
+#confirm:hover {
+  cursor: pointer;
+}
+
+#boxQuote {
+  width: 80%;
+  margin-top: 10%;
+}
+
+#textQuote {
+  font-family: 'Fjord One', serif;
+  font-size: 24px;
+  line-height: 1.5;
+  padding: 10%;
+}
+
+#quoteLeft,
+#quoteRight {
+  -webkit-text-stroke: none;
+  -webkit-text-fill-color: black;
+}
+
+@media screen and (min-width: 768px) {
+  h3 {
+    font-size: 24px;
+  }
+
+  .padding-t1 {
+    padding-top: 10%;
+  }
+
+  .padding-t2 {
+    padding-top: 2%;
+  }
+
+  .padding-t3 {
+    padding-top: 2%;
+  }
+
+  .padding-t4 {
+    padding-top: 4%;
+  }
+
+  .entryVBContainer {
+    width: 240px;
+    height: 210px;
+  }
+
+  .edit {
+    right: 10px;
+    bottom: 18px;
+  }
+
+  #addVB {
+    right: 5%;
+    bottom: 10%;
+    width: 80px;
+    height: 80px;
+  }
+
+  #textQuote {
+    font-size: 36px;
+  }
 }
