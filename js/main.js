@@ -13,9 +13,7 @@ var $delete = document.querySelector('#delete');
 var $popUpContainer = document.querySelector('.popUpContainer');
 var $listView = document.querySelectorAll('.view');
 var $listNavDesktop = document.querySelectorAll('.navDesktop');
-var $navDW = document.querySelector('#navDW');
-var $navDVB = document.querySelector('#navDVB');
-var $navDQ = document.querySelector('#navDQ');
+var $containerNavDesktop = document.querySelector('#containerNavDesktop');
 var $imgPopUp = document.querySelector('.imgPopUp');
 var $formEntryVB = document.querySelector('#formEntryVB');
 var $photoUrl = document.querySelector('#photoUrl');
@@ -37,7 +35,8 @@ var dataWheel = {
 var dataVB = {
   entries: [],
   editing: null,
-  nextEntryId: 1
+  nextEntryId: 1,
+  view: 'wheel-of-life'
 }
   ;
 
@@ -46,9 +45,7 @@ window.addEventListener('resize', swapHeaders);
 window.addEventListener('DOMContentLoaded', handleLoad);
 $addVB.addEventListener('click', openPopUp);
 $cancel.addEventListener('click', closePopUp);
-$navDW.addEventListener('click', swapToW);
-$navDVB.addEventListener('click', swapToVB);
-$navDQ.addEventListener('click', swapToQ);
+$containerNavDesktop.addEventListener('click', doSwapDV);
 $photoUrl.addEventListener('input', updatePhotoUrl);
 $formEntryVB.addEventListener('submit', handleSubmit);
 
@@ -128,19 +125,14 @@ function swapDV(viewActive) {
   }
 }
 
-function swapToW(event) {
-  swapDV('wheel-of-life');
-  doActiveDesktop('navDW');
-}
-
-function swapToVB(event) {
-  swapDV('vision-board');
-  doActiveDesktop('navDVB');
-}
-
-function swapToQ(event) {
-  swapDV('qute-of-the-day');
-  doActiveDesktop('navDQ');
+function doSwapDV(event) {
+  if (event.target.tagName === 'BUTTON') {
+    var $dataView = event.target.getAttribute('data-view');
+    var $id = event.target.getAttribute('id');
+    swapDV($dataView);
+    doActiveDesktop($id);
+    dataVB.view = $dataView;
+  }
 }
 
 function doActiveDesktop(activeID) {
@@ -198,6 +190,7 @@ function renderEntryVB(entry) {
 }
 
 function handleLoad(event) {
+  swapDV(dataVB.view);
   for (var i = dataVB.entries.length - 1; i >= 0; i--) {
     var entryLoad = renderEntryVB(dataVB.entries[i]);
     $rowVB.appendChild(entryLoad);
