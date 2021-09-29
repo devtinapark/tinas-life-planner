@@ -42,9 +42,11 @@
       <div class="row justify-center align-center h64 bc-Xlightgray">
         <div class="col-full relative">
           <button id="homeDesktop">Tina's Life Planner</button>
-          <button id="navDW" class="navDesktop activeDesktop">Wheel of Life</button>
-          <button id="navDVB" class="navDesktop">Vision Board</button>
-          <button id="navDQ" class="navDesktop">Quote of the Day</button>
+           <div id="containerNavDesktop">
+            <button id="navDW" class="navDesktop activeDesktop" data-view="wheel-of-life">Wheel of Life</button>
+            <button id="navDVB" class="navDesktop" data-view="vision-board">Vision Board</button>
+            <button id="navDQ" class="navDesktop" data-view="quote-of-the-day">Quote of the Day</button>
+          </div>
         </div>
       </div>
     </div>
@@ -262,8 +264,8 @@
                 <input id="lifeGoal" name="lifeGoal" type="text">
               </div>
               <div id="popButtonContainer">
-                <button id="cancel" class="popButton">CANCEL</button>
-                <button id="delete" class="popButton">DELETE</button>
+                <button id="cancel" class="popButton" type="button">CANCEL</button>
+                <button id="delete" class="popButton" type="button">DELETE</button>
                 <input id="confirm" class="popButton" type="submit" value="CONFIRM">
               </div>
             </form>
