@@ -413,6 +413,10 @@ button:hover {
   object-fit: cover;
 }
 
+.notVisible {
+  visibility: hidden;
+}
+
 #homeDesktop {
   position: absolute;
   left: 20px;
@@ -449,7 +453,6 @@ button:hover {
   background-color: #d22323;
   margin-left: 8px;
   margin-right: 8px;
-  visibility: visible;
 }
 
 #confirm {
@@ -458,6 +461,24 @@ button:hover {
 
 #confirm:hover {
   cursor: pointer;
+}
+
+#boxQuote {
+  width: 80%;
+  margin-top: 10%;
+}
+
+#textQuote {
+  font-family: 'Fjord One', serif;
+  font-size: 24px;
+  line-height: 1.5;
+  padding: 10%;
+}
+
+#quoteLeft,
+#quoteRight {
+  -webkit-text-stroke: none;
+  -webkit-text-fill-color: black;
 }
 
 @media screen and (min-width: 768px) {
@@ -496,5 +517,9 @@ button:hover {
     bottom: 10%;
     width: 80px;
     height: 80px;
+  }
+
+  #textQuote {
+    font-size: 36px;
   }
 }

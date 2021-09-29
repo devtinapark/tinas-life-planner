@@ -20,6 +20,14 @@
   text-align: center;
 }
 
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
 .col-full,
 .col-one-half,
 .col-one-third,
@@ -33,6 +41,13 @@
 
 .padding-page {
   padding: 0;
+}
+
+.padding-quote {
+  padding-top: 20%;
+  padding-bottom: 20%;
+  padding-left: 15%;
+  padding-right: 15%;
 }
 
 .hidden {

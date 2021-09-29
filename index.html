@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@200;400;600;700&family=Roboto:wght@400;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@200;400;600;700&family=Fjord+One&family=Roboto:wght@400;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -50,7 +50,7 @@
     </div>
   </header>
   <main class="text-center">
-    <div data-view="wheel-of-life" class="padding-page view">
+    <div data-view="wheel-of-life" class="padding-page view hidden">
       <div class="row justify-center">
         <div class="col-one-third padding-t1">
           <img id="imgWheel" alt="wheel-of-life" src="https://image-charts.com/chart?chco=FF9797%7CFFC997%7CF3E078%7CA0E845%7C7BE8F6%7C63BDFF%7CC3B9FF%7CCA90DE%7CFFCAF0%7CEA9BD4&chd=t%3A10%2C10%2C10%2C10%2C10%2C10%2C10%2C10%2C10%2C10&chl=Career%7CFinance%7CHealth%7CSocial%7CFamily%7CLove%7CRecreation%7CContribution%7CSpirituality%7CSelf-Image&chlps=font.size%2C1%7Cpadding.right%2C10&chs=300x300&cht=pa&chxt=x%2Cy
@@ -271,7 +271,20 @@
         </div>
       </div>
     </div>
-    <div data-view="quote-of-the-day" class="padding-page view hidden">
+    <div data-view="quote-of-the-day" class="padding-page view">
+      <div class="row justify-center">
+        <div id="boxQuote">
+          <div class="text-left">
+            <i id="quoteLeft" class="fa fa-quote-left fa-3x"></i>
+          </div>
+          <div id="textQuote" class="col-full">
+            All the forces in the world are not so powerful as an idea whose time has come.
+          </div>
+          <div class="text-right">
+            <i id="quoteRight" class="fa fa-quote-right fa-lg"></i>
+          </div>
+        </div>
+      </div>
     </div>
   </main>
   <script src="js/eaydropdown.js"></script>

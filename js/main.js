@@ -109,7 +109,7 @@ function swapHeaders(event) {
 
 function openPopUp(event) {
   $popUpContainer.className = 'popUpContainer row justify-center align-center';
-  $delete.style.visibility = 'hidden';
+  $delete.className = 'popButton notVisible';
 }
 
 function closePopUp(event) {
