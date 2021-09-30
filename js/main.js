@@ -37,17 +37,17 @@ var dataVB = {
   editing: null,
   nextEntryId: 1,
   view: 'wheel-of-life'
-}
-  ;
+};
 
 window.addEventListener('beforeunload', doDataJSON);
 window.addEventListener('resize', swapHeaders);
 window.addEventListener('DOMContentLoaded', handleLoad);
-$addVB.addEventListener('click', openPopUp);
+$addVB.addEventListener('click', handleAdd);
 $cancel.addEventListener('click', closePopUp);
 $containerNavDesktop.addEventListener('click', doSwapDV);
 $photoUrl.addEventListener('input', updatePhotoUrl);
 $formEntryVB.addEventListener('submit', handleSubmit);
+$rowVB.addEventListener('click', handleEdit);
 
 function doDataJSON(event) {
   var dataWheelJSON = JSON.stringify(dataWheel);
@@ -104,6 +104,11 @@ function swapHeaders(event) {
   }
 }
 
+function handleAdd(event) {
+  $delete.className = 'popButton notVisible';
+  openPopUp();
+}
+
 function openPopUp(event) {
   $popUpContainer.className = 'popUpContainer row justify-center align-center';
   $delete.className = 'popButton notVisible';
@@ -146,7 +151,12 @@ function doActiveDesktop(activeID) {
 }
 
 function updatePhotoUrl(event) {
-  $imgPopUp.setAttribute('src', $photoUrl.value);
+  var $currentUrl = $photoUrl.value;
+  if ($currentUrl !== '') {
+    $imgPopUp.setAttribute('src', $currentUrl);
+  } else {
+    $imgPopUp.setAttribute('src', 'images/placeholder.jpeg');
+  }
 }
 
 function handleSubmit(event) {
@@ -160,19 +170,36 @@ function handleSubmit(event) {
     dataVB.nextEntryId += 1;
     var newEntry = renderEntryVB(entry);
     $rowVB.prepend(newEntry);
+  } else {
+    entry.entryId = dataVB.editing.entryId;
+    for (var i = 0; i < dataVB.entries.length; i++) {
+      if (dataVB.entries[i].entryId === entry.entryId) {
+        dataVB.entries.splice(i, 1, entry);
+      }
+    }
+    var editedEntry = renderEntryVB(entry);
+    var $entries = $rowVB.querySelectorAll('.col-one-fourth-2 padding-t4');
+    for (var j = 0; j < $entries.length; j++) {
+      if ($entries[j].getAttribute('data-entryId') === entry.entryId.toString()) {
+        $rowVB.replaceChild(editedEntry, $entries[j]);
+      }
+    }
   }
   closePopUp();
+  dataVB.editing = null;
 }
 
 function renderEntryVB(entry) {
   var $col = document.createElement('div');
   $col.setAttribute('class', 'col-one-fourth-2 padding-t4');
+  $col.setAttribute('data-entryId', entry.entryId);
   var $entryVBContainer = document.createElement('div');
   $entryVBContainer.setAttribute('class', 'entryVBContainer');
   var $edit = document.createElement('div');
   $edit.setAttribute('class', 'edit');
   var $i = document.createElement('i');
   $i.setAttribute('class', 'fa fa-pencil fa-lg');
+  $i.setAttribute('data-entryId', entry.entryId);
   var $entryVBOverlay = document.createElement('div');
   $entryVBOverlay.setAttribute('class', 'entryVBOverlay');
   var $imgVB = document.createElement('img');
@@ -194,5 +221,20 @@ function handleLoad(event) {
   for (var i = dataVB.entries.length - 1; i >= 0; i--) {
     var entryLoad = renderEntryVB(dataVB.entries[i]);
     $rowVB.appendChild(entryLoad);
+  }
+}
+
+function handleEdit(event) {
+  if (event.target.tagName === 'I') {
+    $delete.className = 'popButton';
+    openPopUp();
+    for (var i = 0; i < dataVB.entries.length; i++) {
+      if (dataVB.entries[i].entryId.toString() === event.target.getAttribute('data-entryId')) {
+        dataVB.editing = dataVB.entries[i];
+        $formEntryVB.elements.photoUrl.value = dataVB.entries[i].url;
+        $formEntryVB.elements.lifeGoal.value = dataVB.entries[i].goal;
+        updatePhotoUrl();
+      }
+    }
   }
 }
