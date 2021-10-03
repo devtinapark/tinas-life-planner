@@ -48,6 +48,7 @@ $containerNavDesktop.addEventListener('click', doSwapDV);
 $photoUrl.addEventListener('input', updatePhotoUrl);
 $formEntryVB.addEventListener('submit', handleSubmit);
 $rowVB.addEventListener('click', handleEdit);
+$delete.addEventListener('click', handleDelete);
 
 function doDataJSON(event) {
   var dataWheelJSON = JSON.stringify(dataWheel);
@@ -111,7 +112,6 @@ function handleAdd(event) {
 
 function openPopUp(event) {
   $popUpContainer.className = 'popUpContainer row justify-center align-center';
-  $delete.className = 'popButton notVisible';
 }
 
 function closePopUp(event) {
@@ -237,4 +237,20 @@ function handleEdit(event) {
       }
     }
   }
+}
+
+function handleDelete(event) {
+  for (var i = 0; i < dataVB.entries.length; i++) {
+    if (dataVB.entries[i].entryId === dataVB.editing.entryId) {
+      dataVB.entries.splice(i, 1);
+    }
+  }
+  var $entries = $rowVB.querySelectorAll('.col-one-fourth-2 padding-t4');
+  for (var j = 0; j < $entries.length; j++) {
+    if ($entries[j].getAttribute('data-entryId') === dataVB.editing.entryId.toString()) {
+      $rowVB.removeChild($entries[j]);
+    }
+  }
+  closePopUp();
+  dataVB.editing = null;
 }
