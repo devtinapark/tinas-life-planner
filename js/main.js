@@ -160,7 +160,6 @@ function updatePhotoUrl(event) {
 }
 
 function handleSubmit(event) {
-  event.preventDefault();
   var entry = {};
   entry.url = $formEntryVB.elements.photoUrl.value;
   entry.goal = $formEntryVB.elements.lifeGoal.value;
@@ -216,11 +215,18 @@ function renderEntryVB(entry) {
   return $col;
 }
 
-function handleLoad(event) {
+function handleLoad() {
   swapDV(dataVB.view);
   for (var i = dataVB.entries.length - 1; i >= 0; i--) {
     var entryLoad = renderEntryVB(dataVB.entries[i]);
     $rowVB.appendChild(entryLoad);
+  }
+  if (dataVB.view === 'wheel-of-life') {
+    doActiveDesktop('navDW');
+  } else if (dataVB.view === 'vision-board') {
+    doActiveDesktop('navDVB');
+  } else if (dataVB.view === 'quote-of-the-day') {
+    doActiveDesktop('navDQ');
   }
 }
 
@@ -252,5 +258,6 @@ function handleDelete(event) {
     }
   }
   closePopUp();
+  window.location.reload();
   dataVB.editing = null;
 }
