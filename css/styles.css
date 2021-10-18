@@ -475,6 +475,14 @@ button:hover {
   padding: 10%;
 }
 
+#authorQuote {
+  font-family: 'Fjord One', serif;
+  font-size: 24px;
+  line-height: 1.5;
+  padding: 10%;
+  text-align: right;
+}
+
 #quoteLeft,
 #quoteRight {
   -webkit-text-stroke: none;
@@ -519,7 +527,8 @@ button:hover {
     height: 80px;
   }
 
-  #textQuote {
+  #textQuote,
+  #authorQuote {
     font-size: 36px;
   }
 }
