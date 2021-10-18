@@ -13,11 +13,13 @@ var $delete = document.querySelector('#delete');
 var $popUpContainer = document.querySelector('.popUpContainer');
 var $listView = document.querySelectorAll('.view');
 var $listNavDesktop = document.querySelectorAll('.navDesktop');
+var $listNavMobile = document.querySelectorAll('.navMobile');
 var $containerNavDesktop = document.querySelector('#containerNavDesktop');
 var $imgPopUp = document.querySelector('.imgPopUp');
 var $formEntryVB = document.querySelector('#formEntryVB');
 var $photoUrl = document.querySelector('#photoUrl');
 var $rowVB = document.querySelector('#rowVB');
+var $navSelect = document.querySelector('#navSelect');
 
 var dataWheel = {
   career: 10,
@@ -49,6 +51,7 @@ $photoUrl.addEventListener('input', updatePhotoUrl);
 $formEntryVB.addEventListener('submit', handleSubmit);
 $rowVB.addEventListener('click', handleEdit);
 $delete.addEventListener('click', handleDelete);
+$navSelect.addEventListener('change', handleNavSelect);
 
 function doDataJSON(event) {
   var dataWheelJSON = JSON.stringify(dataWheel);
@@ -147,6 +150,29 @@ function doActiveDesktop(activeID) {
     } else {
       $navDesktop.className = 'navDesktop';
     }
+  }
+}
+
+function doActiveMobile(activeID) {
+  for (var $navMobile of $listNavMobile) {
+    if ($navMobile.getAttribute('id') === activeID) {
+      $navMobile.className = 'navMobile c-white-shadow';
+    } else {
+      $navMobile.className = 'navMobile c-white-shadow hidden';
+    }
+  }
+}
+
+function handleNavSelect(event) {
+  var $dataView = event.target.value;
+  swapDV($dataView);
+  dataVB.view = $dataView;
+  if (dataVB.view === 'wheel-of-life') {
+    doActiveMobile('navMW');
+  } else if (dataVB.view === 'vision-board') {
+    doActiveMobile('navMVB');
+  } else if (dataVB.view === 'quote-of-the-day') {
+    doActiveMobile('navMQ');
   }
 }
 

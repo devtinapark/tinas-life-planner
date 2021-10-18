@@ -101,6 +101,10 @@ button:hover {
   height: 64px;
 }
 
+.h120 {
+  height: 120px;
+}
+
 .c-lightgray {
   color: #d9d9d9;
 }
