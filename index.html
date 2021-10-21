@@ -26,18 +26,24 @@
       </div>
       <div class="row justify-center align-center h64 bc-lightgray">
         <div class="col-full">
-          <div class="hidden dropdown">
-            <button>Menu</button>
-            <div class="dropdown-content">
-              <a href="">Wheel of Life</a>
-              <a href="">Vision Board</a>
-              <a href="">Quote of the Day</a>
-            </div>
-          </div>
-          <button><h2 class="c-white-shadow">Wheel of Life</h2></button>
+          <button>
+            <h2 id="navMW" class="navMobile c-white-shadow">Wheel of Life</h2>
+            <h2 id="navMVB" class="navMobile c-white-shadow hidden">Vision Board</h2>
+            <h2 id="navMQ" class="navMobile c-white-shadow hidden">Quote of the Day</h2>
+          </button>
         </div>
       </div>
-    </div>
+      <div class="row justify-center align-center h64">
+        <div class="col-full">
+          <select id="navSelect" name="navSelect">
+            <option value="">Navigate To:</option>
+            <option value="wheel-of-life">Wheel of Life</option>
+            <option value="vision-board">Vision Board</option>
+            <option value="quote-of-the-day">Quote of the Day</option>
+          </select>
+        </div>
+      </div>
+      </div>
     <div id="header-desktop" class="hidden">
       <div class="row justify-center align-center h64 bc-Xlightgray">
         <div class="col-full relative">
@@ -284,6 +290,9 @@
           </div>
           <div class="text-right">
             <i id="quoteRight" class="fa fa-quote-right fa-lg"></i>
+          </div>
+          <div id="authorQuote" class="col=full">
+            - Victor Hugo
           </div>
         </div>
       </div>
