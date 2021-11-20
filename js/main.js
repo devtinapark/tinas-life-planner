@@ -2,7 +2,7 @@
 
 easydropdown.all();
 
-var minWidth = window.matchMedia('(min-width: 768px)');
+var minWidth = window.matchMedia('(min-width: 1280px)');
 var $headerMobile = document.querySelector('#header-mobile');
 var $headerDesktop = document.querySelector('#header-desktop');
 var $selectList = document.querySelectorAll('select');
@@ -20,6 +20,7 @@ var $formEntryVB = document.querySelector('#formEntryVB');
 var $photoUrl = document.querySelector('#photoUrl');
 var $rowVB = document.querySelector('#rowVB');
 var $navSelect = document.querySelector('#navSelect');
+var $spin = document.querySelector('#spin');
 
 var dataWheel = {
   career: 10,
@@ -41,6 +42,8 @@ var dataVB = {
   view: 'wheel-of-life'
 };
 
+window.addEventListener('load', hideSpin);
+window.addEventListener('beforeunload', showSpin);
 window.addEventListener('beforeunload', doDataJSON);
 window.addEventListener('resize', swapHeaders);
 window.addEventListener('DOMContentLoaded', handleLoad);
@@ -52,6 +55,14 @@ $formEntryVB.addEventListener('submit', handleSubmit);
 $rowVB.addEventListener('click', handleEdit);
 $delete.addEventListener('click', handleDelete);
 $navSelect.addEventListener('change', handleNavSelect);
+
+function hideSpin(event) {
+  $spin.className = 'notVisible';
+}
+
+function showSpin(event) {
+  $spin.className = '';
+}
 
 function doDataJSON(event) {
   var dataWheelJSON = JSON.stringify(dataWheel);
@@ -93,7 +104,7 @@ function updateWheelUrl() {
   dataWheel.contribution + '%2C' +
   dataWheel.spirituality + '%2C' +
   dataWheel.selfImage +
-  '&chl=Career%7CFinance%7CHealth%7CSocial%7CFamily%7CLove%7CRecreation%7CContribution%7CSpirituality%7CSelf-Image&chlps=font.size%2C10.5%7Cpadding.right%2C10&chs=300x300&cht=pa&chxt=x%2Cy';
+  '&chl=Career%7CFinance%7CHealth%7CSocial%7CFamily%7CLove%7CRecreation%7CContribution%7CSpirituality%7CSelf-Image&chlps=font.size%2C10.5%7Cpadding.right%2C10&chs=350x350&cht=pa&chxt=x%2Cy';
   $imgWheel.setAttribute('src', newUrl);
 }
 swapHeaders();

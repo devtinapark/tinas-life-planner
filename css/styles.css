@@ -46,6 +46,7 @@ button {
 button:hover {
   cursor: pointer;
   color: white;
+  transition: color 0.2s ease-out;
 }
 
 .popUpBox label,
@@ -128,23 +129,6 @@ button:hover {
 
 .bc-darkgray {
   background-color: #a9a9a9;
-}
-
-.padding-t1 {
-  padding-top: 7%;
-  padding-bottom: 7%;
-}
-
-.padding-t2 {
-  padding-top: 0;
-}
-
-.padding-t3 {
-  padding-top: 0;
-}
-
-.padding-t4 {
-  padding-top: 7%;
 }
 
 .category-box {
@@ -428,10 +412,12 @@ button:hover {
   font-size: 36px;
   font-weight: 700;
   color: #7c7c7c;
+  transition: filter 0.2s ease-out;
 }
 
 #homeDesktop:hover {
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25));
+  transition: filter 0.2s ease-out;
 }
 
 #addVB {
@@ -467,16 +453,32 @@ button:hover {
   cursor: pointer;
 }
 
+#magicBallContainer {
+  width: 100%;
+}
+
+#magicBall {
+  cursor: pointer;
+  width: 250px;
+  background-color: transparent;
+  padding-top: 20px;
+  transition: transform 2s ease-out;
+}
+
+#magicBall:hover {
+  transform: scale(1.5);
+  transition: transform 2s ease-out;
+}
+
 #boxQuote {
   width: 80%;
-  margin-top: 10%;
 }
 
 #textQuote {
   font-family: 'Fjord One', serif;
   font-size: 24px;
   line-height: 1.5;
-  padding: 10%;
+  padding: 5% 10%;
 }
 
 #authorQuote {
@@ -496,22 +498,6 @@ button:hover {
 @media screen and (min-width: 768px) {
   h3 {
     font-size: 24px;
-  }
-
-  .padding-t1 {
-    padding-top: 10%;
-  }
-
-  .padding-t2 {
-    padding-top: 2%;
-  }
-
-  .padding-t3 {
-    padding-top: 2%;
-  }
-
-  .padding-t4 {
-    padding-top: 4%;
   }
 
   .entryVBContainer {
