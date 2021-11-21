@@ -29,13 +29,11 @@
 }
 
 .col-full,
-.col-one-half,
-.col-one-third,
-.col-one-fourth {
+.col-one-third {
   width: 100%;
 }
 
-.col-one-fourth-2 {
+.col-one-fourth {
   width: 50%;
 }
 
@@ -92,10 +90,6 @@
 }
 
 @media screen and (min-width: 1280px) {
-  .col-one-half {
-    width: 50%;
-  }
-
   .padding-page {
     padding-top: 2%;
     padding-left: 200px;
@@ -123,8 +117,7 @@
     width: calc(100% / 3);
   }
 
-  .col-one-fourth,
-  .col-one-fourth-2 {
+  .col-one-fourth {
     width: 25%;
   }
 }
