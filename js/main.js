@@ -214,7 +214,7 @@ function handleSubmit(event) {
       }
     }
     var editedEntry = renderEntryVB(entry);
-    var $entries = $rowVB.querySelectorAll('.col-one-fourth-2 padding-t4');
+    var $entries = $rowVB.querySelectorAll('.col-one-fourth padding-t4');
     for (var j = 0; j < $entries.length; j++) {
       if ($entries[j].getAttribute('data-entryId') === entry.entryId.toString()) {
         $rowVB.replaceChild(editedEntry, $entries[j]);
@@ -227,7 +227,7 @@ function handleSubmit(event) {
 
 function renderEntryVB(entry) {
   var $col = document.createElement('div');
-  $col.setAttribute('class', 'col-one-fourth-2 padding-t4');
+  $col.setAttribute('class', 'col-one-fourth padding-t4');
   $col.setAttribute('data-entryId', entry.entryId);
   var $entryVBContainer = document.createElement('div');
   $entryVBContainer.setAttribute('class', 'entryVBContainer');
@@ -288,7 +288,7 @@ function handleDelete(event) {
       dataVB.entries.splice(i, 1);
     }
   }
-  var $entries = $rowVB.querySelectorAll('.col-one-fourth-2 padding-t4');
+  var $entries = $rowVB.querySelectorAll('.col-one-fourth padding-t4');
   for (var j = 0; j < $entries.length; j++) {
     if ($entries[j].getAttribute('data-entryId') === dataVB.editing.entryId.toString()) {
       $rowVB.removeChild($entries[j]);
