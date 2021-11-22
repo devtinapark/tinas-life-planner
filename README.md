@@ -4,7 +4,7 @@ A web application for individuals interested in self-growth to visualize their c
 
 I believe everyone can achieve anything they truly desire in life if planning and execution are done right. I built this app to help those who are interested in planning  and achieving their life goals.
 
-[*__Click For Live Demo__*](https://christine-tina-park.github.io/ajax-project/)
+[*__Click For Live Demo__*](https://christine-tina-park.github.io/tinas-life-planner/)
 
 ## Preview
 
@@ -34,7 +34,7 @@ I believe everyone can achieve anything they truly desire in life if planning an
 1. Clone the repository.
 
     ```shell
-    git clone git@github.com:christine-tina-park/ajax-project.git
+    git clone git@github.com:christine-tina-park/tinas-life-planner.git
     cd ajax-journal
     npm ci
     ```
