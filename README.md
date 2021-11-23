@@ -2,9 +2,9 @@
 
 A web application for individuals interested in self-growth to visualize their current state in life and concretize their life visions into accomplishable tasks.
 
-I believe everyone can achieve anything they truly desire in life if planning and execution are done right. I built this app to help those who are interested in planning  and achieving their life goals.
+I believe everyone can achieve anything they truly desire in life if planning and execution are done right. I built this app to help those who are interested in planning  and achieving their life goals. The app allows the users to create Wheel of Life to self-diagnose their success in differrent categories of life, to visiualize their life visions on Vision Board, and to create and export practical goals to accomplish their life visions.
 
-[*__Click For Live Demo__*](https://christine-tina-park.github.io/tinas-life-planner/)
+[*__Click For Live Demo__*](https://tina-park.github.io/tinas-life-planner/)
 
 ## Preview
 
@@ -34,7 +34,7 @@ I believe everyone can achieve anything they truly desire in life if planning an
 1. Clone the repository.
 
     ```shell
-    git clone git@github.com:christine-tina-park/tinas-life-planner.git
+    git clone git@github.com:tina-park/tinas-life-planner.git
     cd ajax-journal
     npm ci
     ```
